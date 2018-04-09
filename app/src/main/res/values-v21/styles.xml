@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SwitchTheme">
+
+        <item name="colorAccent">@color/colorSwitch</item>
+
+    </style>
+
+    <style name="CheckBoxTheme">
+
+        <item name="colorAccent">@color/colorEnable</item>
+        <item name="colorControlNormal">@color/colorDisable</item>
+
+    </style>
+
+    <style name="RadioButtonTheme">
+
+        <item name="android:colorAccent">@color/colorRadioButton</item>
+
+    </style>
+</resources>

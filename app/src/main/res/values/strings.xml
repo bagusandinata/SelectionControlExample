@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SelectionControlExample</string>
+    <string name="switch_off_on">Switch OFF/ON</string>
+    <string name="radiobutton_1">radiobutton_1</string>
+</resources>
