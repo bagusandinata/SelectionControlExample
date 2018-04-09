@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch_id"
-        android:layout_margin="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/switch_off_on"
         android:theme="@style/SwitchTheme"
         android:checked="false"/>
@@ -24,13 +25,28 @@
         android:checked="false"
         android:theme="@style/CheckBoxTheme"/>
 
-    <android.support.v7.widget.AppCompatRadioButton
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton1_id"
-        android:text="@string/radiobutton_1"
-        android:layout_margin="16dp"
-        android:theme="@style/RadioButtonTheme"
-        android:checked="false"/>
+        android:id="@+id/radioGroup_id">
 
+        <android.support.v7.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton1_id"
+            android:text="@string/radiobutton_1"
+            android:layout_marginLeft="16dp"
+            android:theme="@style/RadioButtonTheme"
+            android:checked="false"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton2_id"
+            android:text="@string/radiobutton_2"
+            android:layout_marginLeft="16dp"
+            android:theme="@style/RadioButtonTheme"
+            android:checked="false"/>
+
+    </RadioGroup>
 </LinearLayout>
