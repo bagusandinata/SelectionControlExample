@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     SwitchCompat switchCompat;
     AppCompatCheckBox checkBox;
-    AppCompatRadioButton radioButton;
+    AppCompatRadioButton radioButton1;
+    AppCompatRadioButton radioButton2;
     RadioGroup radioGroup;
 
     @Override
@@ -24,48 +25,92 @@ public class MainActivity extends AppCompatActivity {
 
         switchCompat = findViewById(R.id.switch_id);
         checkBox = findViewById(R.id.checkbox_id);
-        radioButton = findViewById(R.id.radioButton1_id);
+        radioButton1 = findViewById(R.id.radioButton1_id);
+        radioButton2 = findViewById(R.id.radioButton2_id);
         radioGroup = findViewById(R.id.radioGroup_id);
 
+        lisSwitchCompact();
+
+        lisCheckbox();
+
+        //please select the listener to use (listener radio button or listener radio group
+        //lisRadioButton();
+        lisRadioGroup();
+
+
+
+    }
+
+    //listener switch compat
+    private void lisSwitchCompact(){
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(getApplicationContext(), Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    //listener checkbox
+    private void lisCheckbox(){
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //get true false checked
+//                Toast.makeText(getApplicationContext(), Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
+
+                //get text checkbox
+                final String showText = checkBox.getText().toString().trim();
+                Toast.makeText(getApplicationContext(), showText, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    //listener radio button
+    private void lisRadioButton(){
+        radioButton1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(getApplicationContext(), Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
             }
         });
 
-//        radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                Toast.makeText(getApplicationContext(), Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        radioButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(getApplicationContext(), Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
+    //listener radio group
+    private void lisRadioGroup(){
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                final String showText;
+
                 switch (checkedId){
 
                     case R.id.radioButton1_id:
 
-                        Toast.makeText(getApplicationContext(), "Radio Button 1 ", Toast.LENGTH_SHORT).show();
+                        showText = radioButton1.getText().toString();
+                        //get text radio button
+                        Toast.makeText(getApplicationContext(), showText, Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.radioButton2_id:
 
-                        Toast.makeText(getApplicationContext(), "Radio Button 2", Toast.LENGTH_SHORT).show();
+                        showText = radioButton2.getText().toString();
+                        //get text radio button
+                        Toast.makeText(getApplicationContext(), showText, Toast.LENGTH_SHORT).show();
                         break;
 
                 }
             }
         });
-
     }
+
+
 }
